@@ -37,11 +37,11 @@ var orm = {
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
+        queryString += printQuestionMarks(values.length);
         queryString += ") ";
 
-        connection.query(queryString, vals, function(err, result){
-            if (err) throw err:
+        connection.query(queryString, values, function(err, result){
+            if (err) throw err;
 
             cb(result)
         });
